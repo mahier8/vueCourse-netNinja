@@ -17,9 +17,16 @@ const app = Vue.createApp({
   // },
 
   // for the example with an argument
+  // methods: {
+  //   changeTitle(title) {
+  //     this.title = title;
+  //   },
+  // },
   methods: {
-    changeTitle(title) {
-      this.title = title;
+    toggleShowBooks() {
+      // we set it to inverse each time (what it currently isn't)
+      // so when its true we can set it to false, and vice versa
+      this.showBooks = !this.showBooks;
     },
   },
 });

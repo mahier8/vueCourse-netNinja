@@ -31,14 +31,27 @@
       <button v-on:click="age--">Decrease age</button>
 
       <!-- using a button to conditionally render -->
-      <button><span>Hide Books</span></button>
+      <!-- <button @click="toggleShowBooks"><span>Hide Books</span></button> -->
+
+      <!-- using a button to conditionally render and 2 spans -->
+      <!-- <button @click="toggleShowBooks">
+        <span v-if="showBooks">Hide Books</span>
+        <span v-if="!showBooks">Show Books</span>
+      </button> -->
+
+      <!-- using a button to conditionally render and 2 spans
+      , while using an if else statement -->
+      <button @click="toggleShowBooks">
+        <span v-if="showBooks">Hide Books</span>
+        <span v-else>Show Books</span>
+      </button>
 
       <!-- example of an event listener in a div with @ shortcut -->
       <!-- <div @click="title = 'something else'">Change book title</div> -->
-      <div @click="changeTitle">Change book title</div>
+      <!-- <div @click="changeTitle">Change book title</div> -->
 
       <!-- an example with arguments -->
-      <div @click="changeTitle('Oathbringer')">Change book title</div>
+      <!-- <div @click="changeTitle('Oathbringer')">Change book title</div> -->
     </div>
 
     <script src="app.js"></script>
