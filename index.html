@@ -30,8 +30,17 @@
 
       <!-- the below is how we output dynamic variables, in Vue -->
       <!-- we conditionally render the div below, by using v-if="" -->
-      <div v-if="showBooks">
+      <!-- <div v-if="showBooks">
         <p>{{title}} - {{author}} - {{age}}</p>
+      </div> -->
+
+      <div v-if="showBooks">
+        <ul>
+          <li v-for="book in books">
+            <h3>{{book.title}}</h3>
+            <p>{{book.author}}</p>
+          </li>
+        </ul>
       </div>
 
       <!-- how we would add a click event listener to a button 
@@ -73,6 +82,8 @@
       <div class="box" @mouseleave="handleEvent">mouseleave</div>
       <div class="box" @dblclick="handleEvent">double click</div>
       <div class="box" @mousemove="handleMousemove">position - {{x}},{{y}}</div>
+
+      <!-- outputting lists -->
     </div>
     <script src="app.js"></script>
   </body>
