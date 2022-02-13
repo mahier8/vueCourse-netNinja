@@ -16,16 +16,19 @@ const app = Vue.createApp({
           title: "name of the wind",
           author: "patrick rothfuss",
           img: "assets/pizza.png",
+          isFav: true,
         },
         {
           title: "the way of kings",
           author: "brandon sanderson",
           img: "assets/pizza2.png",
+          isFav: false,
         },
         {
           title: "the final empire",
           author: "brandon sanderson",
           img: "assets/pizza3.png",
+          isFav: true,
         },
       ],
     };
@@ -58,6 +61,17 @@ const app = Vue.createApp({
     handleMousemove(e) {
       this.x = e.offsetX;
       this.y = e.offsetY;
+    },
+    // we are reassigning the value of the
+    //boolean property of each book
+    toggleIsfav(book) {
+      book.isFav = !book.isFav;
+    },
+  },
+  computed: {
+    filteredBooks() {
+      // return "hello";
+      return this.books.filter((book) => book.isFav);
     },
   },
 });
