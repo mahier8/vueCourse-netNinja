@@ -3,6 +3,7 @@ const app = Vue.createApp({
   //   template: "<h2>I am the template</h2>",
   data() {
     return {
+      url: "http://www.thenetninja.co.uk",
       showBooks: true,
       // the below is need for the first few examples
       // title: "The final empire!",
@@ -11,9 +12,21 @@ const app = Vue.createApp({
       x: 0,
       y: 0,
       books: [
-        { title: "name of the wind", author: "patrick rothfuss" },
-        { title: "the way of kings", author: "brandon sanderson" },
-        { title: "the final empire", author: "brandon sanderson" },
+        {
+          title: "name of the wind",
+          author: "patrick rothfuss",
+          img: "assets/pizza.png",
+        },
+        {
+          title: "the way of kings",
+          author: "brandon sanderson",
+          img: "assets/pizza2.png",
+        },
+        {
+          title: "the final empire",
+          author: "brandon sanderson",
+          img: "assets/pizza3.png",
+        },
       ],
     };
   },

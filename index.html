@@ -34,15 +34,6 @@
         <p>{{title}} - {{author}} - {{age}}</p>
       </div> -->
 
-      <div v-if="showBooks">
-        <ul>
-          <li v-for="book in books">
-            <h3>{{book.title}}</h3>
-            <p>{{book.author}}</p>
-          </li>
-        </ul>
-      </div>
-
       <!-- how we would add a click event listener to a button 
         with Vue -->
       <!-- we use the variables name and ++to increase the variable
@@ -84,6 +75,29 @@
       <div class="box" @mousemove="handleMousemove">position - {{x}},{{y}}</div>
 
       <!-- outputting lists -->
+      <div v-if="showBooks">
+        <ul>
+          <li v-for="book in books">
+            <h3>{{book.title}}</h3>
+            <p>{{book.author}}</p>
+          </li>
+        </ul>
+      </div>
+
+      <!-- data/attribute binding -->
+      <!-- v-bind makes whatever is inside the '=' dynamic -->
+      <!-- <a v-bind:href="url">best website ever</a> -->
+      <!-- a shortcut for v:bind -->
+      <a :href="url">best website ever</a>
+      <div v-if="showBooks">
+        <ul>
+          <li v-for="book in books">
+            <img :src="book.img" :alt="book.title" />
+            <h3>{{book.title}}</h3>
+            <p>{{book.author}}</p>
+          </li>
+        </ul>
+      </div>
     </div>
     <script src="app.js"></script>
   </body>
