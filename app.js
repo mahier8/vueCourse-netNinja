@@ -7,6 +7,8 @@ const app = Vue.createApp({
       title: "The final empire!",
       author: "Brandon Sanderson",
       age: 45,
+      x: 0,
+      y: 0,
     };
   },
   // for the example without an argument
@@ -27,6 +29,16 @@ const app = Vue.createApp({
       // we set it to inverse each time (what it currently isn't)
       // so when its true we can set it to false, and vice versa
       this.showBooks = !this.showBooks;
+    },
+    handleEvent(e, data) {
+      console.log(e, e.type);
+      if (data) {
+        console.log(data);
+      }
+    },
+    handleMousemove(e) {
+      this.x = e.offsetX;
+      this.y = e.offsetY;
     },
   },
 });

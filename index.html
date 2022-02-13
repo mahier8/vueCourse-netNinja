@@ -6,12 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Learning Vue</title>
     <script src="https://unpkg.com/vue@3.0.2"></script>
+    <style>
+      .box {
+        padding: 100px 0;
+        width: 400px;
+        text-align: center;
+        background: #ddd;
+        margin: 20px;
+        display: inline-block;
+      }
+    </style>
   </head>
   <body>
     <h1>Hello Vue</h1>
+    <h2>Net Ninja Basics 1</h2>
 
     <!-- At the moment, Vue is only controlling what is inside
-    the div id="app", anyvariable/data outside these tags 
+    the div id="app", any variable/data outside these tags 
     will not be rendered by Vue -->
     <div id="app">
       <!-- <h2>I am the template</h2> -->
@@ -52,8 +63,17 @@
 
       <!-- an example with arguments -->
       <!-- <div @click="changeTitle('Oathbringer')">Change book title</div> -->
-    </div>
 
+      <br />
+      <h2>Net Ninja Basics 2</h2>
+      <!-- mouse events -->
+      <div class="box" @mouseover="handleEvent($event, 5)">
+        mouseover (enter)
+      </div>
+      <div class="box" @mouseleave="handleEvent">mouseleave</div>
+      <div class="box" @dblclick="handleEvent">double click</div>
+      <div class="box" @mousemove="handleMousemove">position - {{x}},{{y}}</div>
+    </div>
     <script src="app.js"></script>
   </body>
 </html>
